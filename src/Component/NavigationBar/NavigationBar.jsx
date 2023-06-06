@@ -2,8 +2,10 @@
 
 const NavigationBar = () => {
     const navOption = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li><a>Home</a></li>
+        <li><a>Instructor</a></li>
+        <li><a>Classes</a></li>
+        <li><a>Dashboard</a></li>
     </>
 
     return (
@@ -18,7 +20,7 @@ const NavigationBar = () => {
                             {navOption}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+                    <a className="btn btn-ghost normal-case text-xl">Sports Academies</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
