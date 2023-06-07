@@ -5,14 +5,14 @@ import NavigationBar from './Component/NavigationBar/NavigationBar'
 import Footer from './Component/Footer/Footer'
 
 function App() {
- 
+
 
   return (
     <>
-    <NavigationBar></NavigationBar>
-    <Outlet></Outlet>
-    <Footer></Footer>
-      
+      <NavigationBar></NavigationBar>
+      <Outlet></Outlet>
+      <Footer></Footer>
+
     </>
   )
 }

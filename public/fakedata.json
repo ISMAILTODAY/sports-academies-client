@@ -1,0 +1,80 @@
+[
+    {
+        "sport": "Football",
+        "description": "Join our soccer club to learn and improve your soccer skills in a fun and competitive environment.",
+        "schedule": "Mondays and Wednesdays, 4:00 PM - 6:00 PM",
+        "ageGroup": "8-12 years old",
+        "location": "City Park Soccer Field",
+        "coach": "Coach John",
+        "enrolledStudents": 25,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 35,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "john@example.com"
+    },
+    {
+        "sport": "Cricket",
+        "description": "Enhance your cricket skills through structured training sessions, drills, and friendly competitions.",
+        "schedule": "Tuesdays and Thursdays, 5:00 PM - 7:00 PM",
+        "ageGroup": "10-14 years old",
+        "location": "Community Center Cricket Ground",
+        "coach": "Coach Sarah",
+        "enrolledStudents": 18,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 40,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "sarah@example.com"
+    },
+    {
+        "sport": "Tennis",
+        "description": "Learn the fundamentals of tennis or improve your existing skills with professional coaching.",
+        "schedule": "Mondays, Wednesdays, and Fridays, 3:30 PM - 5:30 PM",
+        "ageGroup": "6-16 years old",
+        "location": "Tennis Courts at Sports Complex",
+        "coach": "Coach Michael",
+        "enrolledStudents": 30,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 50,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "michael@example.com"
+    },
+    {
+        "sport": "Volleyball",
+        "description": "Join our volleyball team and learn the essential skills and strategies of the game.",
+        "schedule": "Mondays and Wednesdays, 5:00 PM - 7:00 PM",
+        "ageGroup": "12-16 years old",
+        "location": "City Sports Arena",
+        "coach": "Coach Emily",
+        "enrolledStudents": 15,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 45,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "emily@example.com"
+    },
+    {
+        "sport": "Basketball",
+        "description": "Improve your basketball skills through structured training sessions and competitive games.",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 6:00 PM",
+        "ageGroup": "8-14 years old",
+        "location": "Community Center Gymnasium",
+        "coach": "Coach David",
+        "enrolledStudents": 20,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 55,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "david@example.com"
+    },
+    {
+        "sport": "Baseball",
+        "description": "Discover the thrill of baseball and learn the fundamentals of hitting, fielding, and pitching.",
+        "schedule": "Mondays and Wednesdays, 4:30 PM - 6:30 PM",
+        "ageGroup": "10-16 years old",
+        "location": "City Baseball Park",
+        "coach": "Coach Mark",
+        "enrolledStudents": 22,
+        "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
+        "availableSet": 60,
+        "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
+        "instructorEmail": "mark@example.com"
+    }
+]
