@@ -7,7 +7,7 @@ const InstructorDetails = ({ sport }) => {
             <div className="card-body">
                 <h2 className="card-title">{sport.coach}</h2>
                 <p>Classes: {sport.sport}</p>
-                <p>Schedule: {sport.schedule}</p>
+                <p>Email: {sport.instructorEmail}</p>
                 <div className="card-actions justify-end">
 
                 </div>

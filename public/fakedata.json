@@ -10,7 +10,8 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 35,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "john@example.com"
+        "instructorEmail": "john@example.com",
+        "price": 50
     },
     {
         "sport": "Cricket",
@@ -23,7 +24,8 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 40,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "sarah@example.com"
+        "instructorEmail": "sarah@example.com",
+        "price": 40
     },
     {
         "sport": "Tennis",
@@ -36,7 +38,8 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 50,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "michael@example.com"
+        "instructorEmail": "michael@example.com",
+        "price": 60
     },
     {
         "sport": "Volleyball",
@@ -49,7 +52,8 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 45,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "emily@example.com"
+        "instructorEmail": "emily@example.com",
+        "price": 55
     },
     {
         "sport": "Basketball",
@@ -62,7 +66,8 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 55,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "david@example.com"
+        "instructorEmail": "david@example.com",
+        "price": 45
     },
     {
         "sport": "Baseball",
@@ -75,6 +80,7 @@
         "img": "https://i.ibb.co/jGc2Gxw/sp3.jpg",
         "availableSet": 60,
         "coachImg": "https://i.ibb.co/wzdQ6cH/coach.webp",
-        "instructorEmail": "mark@example.com"
+        "instructorEmail": "mark@example.com",
+        "price": 70
     }
 ]

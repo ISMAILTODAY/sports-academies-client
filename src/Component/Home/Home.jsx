@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SportsCard from "./SpotsCard/SportsCard";
+
 import InstructorCard from "./InstructorCard/InstructorCard";
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
 
     return (
 
-        <div>
+        <div className="mt-32">
             <section>
                 <Carousel autoPlay={true} infiniteLoop={true}>
                     <div>

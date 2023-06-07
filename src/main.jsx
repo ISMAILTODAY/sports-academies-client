@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import Home from './Component/Home/Home.jsx';
 import Instructor from './Component/Instructor/Instructor.jsx';
+import SportClass from './Component/Classes/SportClass.jsx';
+
+
 
 const router = createBrowserRouter([
   {
@@ -17,12 +20,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('fakedata.json')
       },
       {
         path: 'instructor',
         element: <Instructor></Instructor>
+      },
+      {
+        path: 'classes',
+        element: <SportClass></SportClass>
       }
+
     ]
   },
 ]);
