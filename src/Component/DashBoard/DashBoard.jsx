@@ -7,8 +7,6 @@ import { FaHome, FaChalkboardTeacher, FaBookReader, FaBookOpen, FaCommentDots, F
 
 const DashBoard = () => {
 
-
-    // todo: make admine dynamicly
     const { data: allUers = [] } = useQuery(['users'], async () => {
         const res = await fetch('https://sports-academies-server.vercel.app/user')
         return res.json();
@@ -17,13 +15,12 @@ const DashBoard = () => {
     const userRole = allUers.find(singleUser => singleUser?.email === user?.email);
     console.log(userRole)
 
-    // const isAdmin = 1;
-    // const isInstructor = 0;
+        ;
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col items-center justify-center">
-                {/* Page content here */}
+
                 <Outlet></Outlet>
                 <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
@@ -31,7 +28,7 @@ const DashBoard = () => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
-                    {/* Sidebar content here */}
+
                     <h1 className="text-3xl font-semibold mb-5 ">SPORT ACADEMIES</h1>
                     {
                         userRole?.role === 'admin' ? <>
