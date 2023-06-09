@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthProvider } from "../AuthContext/AuthContext";
+import Swal from "sweetalert2";
 
 
 const AddClass = () => {
@@ -8,7 +9,6 @@ const AddClass = () => {
 
     const submit = (e) => {
         e.preventDefault()
-        console.log(e.target)
         const form = e.target;
         const className = form.className.value;
         const instructorName = form.instructorName.value;
@@ -36,7 +36,15 @@ const AddClass = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data)
+                        if (data.acknowledged) {
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Done!',
+                                showConfirmButton: false,
+                                timer: 1000
+                            })
+                        }
                     })
 
             })

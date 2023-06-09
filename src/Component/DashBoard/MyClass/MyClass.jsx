@@ -11,14 +11,11 @@ const MyClass = () => {
             .then(res => res.json())
             .then(data => {
                 setMyClasses(data)
-                console.log(data)
             })
     }, [user])
 
     return (
         <div className="w-full overflow-x-auto">
-            <h1>total: { }</h1>
-            <h1>pay: { }</h1>
             <table className="table">
                 {/* head */}
                 <thead>

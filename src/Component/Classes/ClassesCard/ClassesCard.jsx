@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { AuthProvider } from "../../AuthContext/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ClassesCard = ({ sport }) => {
     const { user } = useContext(AuthProvider)
-    console.log(user?.email)
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -14,7 +14,6 @@ const ClassesCard = ({ sport }) => {
         const selectClass = { classId: _id, className, instructorName, classPhoto, price, email: user?.email }
 
         if (user) {
-            console.log(sportClass)
             fetch(`https://sports-academies-server.vercel.app/selectclass`, {
                 method: 'POST',
                 headers: {
@@ -24,7 +23,16 @@ const ClassesCard = ({ sport }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+
+                    if (data.acknowledged) (
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Class added successfully',
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
+                    )
                 })
         }
         // TODO: alart

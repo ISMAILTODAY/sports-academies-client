@@ -1,6 +1,7 @@
 // import React from 'react';
 
 // import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import ManageUserRow from "./ManageUserRow";
 // import ManageClassesRow from "./ManageUserRow";
 import { useQuery } from "react-query";
@@ -8,41 +9,47 @@ import { useQuery } from "react-query";
 
 const ManageUser = () => {
 
-    // const [allUers, setAllUsers] = useState([]);
-    // useEffect(() => {
-    //     fetch('https://sports-academies-server.vercel.app/user')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             setAllUsers(data)
-    //         })
-    // }, [])
-
     const { data: allUers = [], refetch } = useQuery(['users'], async () => {
         const res = await fetch('https://sports-academies-server.vercel.app/user')
         return res.json();
     })
 
     const handleMakeAdmin = (user) => {
-        // console.log(id)
+
         fetch(`https://sports-academies-server.vercel.app/user/admin/${user?._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
             .then(data => {
-                refetch()
-                console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user?.name} is now admin`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    refetch()
+                }
             })
 
     }
 
     const handleMakeInstructor = (user) => {
-        // console.log(id)
+
         fetch(`https://sports-academies-server.vercel.app/user/instructor/${user?._id}`, { method: 'PATCH' })
             .then(res => res.json())
             .then(data => {
-                refetch()
-                console.log(data)
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is now Instructor`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    refetch()
+                }
             })
 
     }
@@ -52,8 +59,29 @@ const ManageUser = () => {
         fetch(`https://sports-academies-server.vercel.app/user/${id}`, { method: 'DELETE' })
             .then(res => res.json())
             .then(data => {
-                refetch()
-                console.log(data)
+                if (data.acknowledged) {
+
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            refetch()
+                            Swal.fire(
+                                'Deleted!',
+                                'Your class has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+                }
+
             })
 
     }

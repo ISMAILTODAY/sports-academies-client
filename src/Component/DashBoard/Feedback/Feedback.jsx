@@ -10,12 +10,6 @@ const Feedback = () => {
         return res.json()
     })
 
-    // const { data: allclasses = [], refetch } = useQuery(['classes'], async () => {
-    //     const res = await fetch('https://sports-academies-server.vercel.app/allclass')
-    //     return res.json();
-    // })
-    console.log(feedbacks)
-
     return (
         <div className="w-full overflow-x-auto">
 

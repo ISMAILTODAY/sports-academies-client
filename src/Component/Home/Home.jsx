@@ -16,19 +16,19 @@ const Home = () => {
 
     return (
 
-        <div className="mt-32">
-            <section>
+        <div className="border mt-20">
+            <section className="h-[60rem]">
                 <Carousel autoPlay={true} infiniteLoop={true}>
                     <div>
-                        <img className="h-full" src="https://i.ibb.co/h8DVW14/slide2.jpg" />
+                        <img className="h-full" src="https://i.ibb.co/wYy4yBG/tenise.webp" />
 
                     </div>
                     <div>
-                        <img className="h-full" src="https://i.ibb.co/h8DVW14/slide2.jpg" />
+                        <img className="h-full" src="https://i.ibb.co/vJxbvpK/cricket.jpg" />
 
                     </div>
                     <div>
-                        <img className="h-full" src="https://i.ibb.co/h8DVW14/slide2.jpg" />
+                        <img className="h-full" src="https://i.ibb.co/Z1hF7dh/soccer-ball-waiting-1639510.jpg" />
 
                     </div>
                 </Carousel>

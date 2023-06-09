@@ -54,7 +54,6 @@ const AuthContext = ({ children }) => {
 
                 axios.post('https://sports-academies-server.vercel.app/jwt', { email: currentUser.email })
                     .then(res => {
-                        console.log(res.data)
                         localStorage.setItem('access-token', res.data.token)
                     })
 

@@ -1,35 +1,21 @@
 import { useContext } from 'react';
 import { AuthProvider } from '../../AuthContext/AuthContext';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateClass = () => {
     const { id } = useParams()
 
-    const { user } = useContext(AuthProvider);
 
-
-    // const { register, handleSubmit, formState: { errors } } = useForm();
-
-    // const onSubmit = data => {
-
-    //     console.log(data)
-    //     // const { email, password, name, photo } = data;
-
-    // };
+    const { user } = useContext(AuthProvider)
 
     const submit = (e) => {
         e.preventDefault()
-        console.log(e.target)
         const form = e.target;
         const className = form.className.value;
-        // const instructorName = form.instructorName.value;
-        // const instructorEmail = form.instructorEmail.value;
         const availableSet = form.availableSet.value;
         const price = form.price.value;
         const classPhoto = form.classPhoto.files[0];
-        // console.log(classPhoto)
-
-        // console.log({ className, instructorName, instructorEmail, availableSet, price: parseInt(price), classPhoto })
 
         if (classPhoto) {
 
@@ -43,19 +29,51 @@ const UpdateClass = () => {
                 .then(image => {
                     const updateClass = { className, availableSet: parseInt(availableSet), price: parseInt(price), classPhoto: image.data.display_url }
 
-                    // console.log(image.data.display_url)
-                    // console.log(classData)
                     fetch(`https://sports-academies-server.vercel.app/allclass/${id}`, {
-                        method: 'PUT',
+                        method: 'PATCH',
                         headers: {
                             'content-type': 'application/json'
                         },
                         body: JSON.stringify(updateClass)
                     })
                         .then(res => res.json())
-                        .then(data => {
-                            console.log(data)
+                        .then((data) => {
+                            if (data.modifiedCount > 0) {
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: 'Updated!',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+
                         })
+
+                })
+        }
+        else {
+            const updateClass = { className, availableSet: parseInt(availableSet), price: parseInt(price) }
+
+
+            fetch(`https://sports-academies-server.vercel.app/allclass/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(updateClass)
+            })
+                .then(res => res.json())
+                .then((data) => {
+                    if (data.modifiedCount > 0) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: 'Updated!',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                    }
 
                 })
         }
@@ -65,7 +83,7 @@ const UpdateClass = () => {
 
     return (
         <form onSubmit={submit} className="flex flex-col gap-3">
-            <h1 className="text-center text-3xl font-semibold">Ragistration</h1>
+            <h1 className="text-center text-3xl font-semibold">Update</h1>
 
             <input type="text" placeholder="Class name" name="className" className="input input-bordered input-secondary w-full max-w-xs" />
 

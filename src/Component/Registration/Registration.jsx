@@ -1,20 +1,22 @@
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthProvider } from '../AuthContext/AuthContext';
 import { FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 const Registration = () => {
     const { createUser, profileUpdate, signInWithGoogle } = useContext(AuthProvider);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/'
+
     const onSubmit = data => {
 
-        console.log(data)
         const { email, password, name, photo } = data;
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 profileUpdate(user, name, photo)
                     .then(() => {
                         const userData = { name: data.name, email: data.email, photo: data.photo }
@@ -26,24 +28,20 @@ const Registration = () => {
                             body: JSON.stringify(userData)
                         })
                             .then(res => res.json())
-                            .then(data => {
-                                <Navigate to='/'></Navigate>
-                                console.log(data)
+                            .then(() => {
+                                navigate(from)
+                                Swal.fire('Login successfull')
+
                             })
                     })
             })
-            .catch(erorr => {
-                console.log(erorr)
-            })
+            .catch(() => { })
 
     };
-    console.log(errors);
-
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 const userData = { name: user.displayName, email: user.email, photo: user.photoURL }
                 fetch('https://sports-academies-server.vercel.app/user', {
                     method: 'POST',
@@ -53,7 +51,7 @@ const Registration = () => {
                     body: JSON.stringify(userData)
                 })
                     .then(res => res.json())
-                    .then(data => console.log(data))
+                    .then(() => { })
 
             })
     }

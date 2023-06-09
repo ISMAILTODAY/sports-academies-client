@@ -1,6 +1,7 @@
 // import React from 'react';
 
 import { Link } from "react-router-dom";
+import { FaRegEdit } from "react-icons/fa";
 
 const MyClassRow = ({ myClass, index }) => {
 
@@ -11,7 +12,7 @@ const MyClassRow = ({ myClass, index }) => {
             <td>${myClass.price}</td>
             <td>{ }</td>
             <td>{myClass.status}</td>
-            <td><Link to={`/dashboard/myclass/update/:${myClass._id}`}><button>update</button></Link></td>
+            <td><Link to={`/dashboard/myclass/update/${myClass._id}`}><button><FaRegEdit className="text-2xl"></FaRegEdit></button></Link></td>
         </tr>
     );
 };

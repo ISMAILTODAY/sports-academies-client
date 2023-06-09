@@ -15,7 +15,7 @@ import Registration from './Component/Registration/Registration.jsx';
 import AuthContext from './Component/AuthContext/AuthContext.jsx';
 import DashBoard from './Component/DashBoard/DashBoard.jsx';
 import SelectedClass from './Component/DashBoard/SelectedClass/SelectedClass.jsx';
-// import ManageClasses from './Component/DashBoard/ManageClasses/ManageUser.jsx';
+
 import {
   QueryClient,
   QueryClientProvider,
@@ -27,8 +27,6 @@ import ManageClass from './Component/DashBoard/ManageClass/ManageClass.jsx';
 import Feedback from './Component/DashBoard/Feedback/Feedback.jsx';
 import UpdateClass from './Component/DashBoard/MyClass/UpdateClass.jsx';
 import PageNotFound from './Component/PageNotFound/PageNotFound.jsx';
-// import { DarkReader } from 'react-darkreader';
-// import PrivateRoute from './Component/PrivateRoute/PrivateRoute.jsx';
 
 
 
@@ -39,8 +37,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>,
-        loader: () => fetch('fakedata.json')
+        element: <Home></Home>
       },
       {
         path: 'instructor',

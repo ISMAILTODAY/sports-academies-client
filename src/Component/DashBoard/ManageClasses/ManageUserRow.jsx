@@ -1,7 +1,6 @@
 // import React from 'react';
 
 const ManageUserRow = ({ user, handleMakeAdmin, handleMakeInstructor, handleDelete }) => {
-    console.log(user)
     return (
         <tr>
             <th>{user.name}</th>

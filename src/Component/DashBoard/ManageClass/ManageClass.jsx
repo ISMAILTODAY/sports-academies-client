@@ -7,15 +7,6 @@ import { useQuery } from "react-query";
 
 const ManageClass = () => {
 
-    // const [allclasses, setAllClasses] = useState([]);
-    // useEffect(() => {
-    //     fetch('https://sports-academies-server.vercel.app/allclass')
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             setAllClasses(data)
-    //             console.log(data)
-    //         })
-    // }, [])
 
     const { data: allclasses = [], refetch } = useQuery(['classes'], async () => {
         const res = await fetch('https://sports-academies-server.vercel.app/allclass')
@@ -23,23 +14,20 @@ const ManageClass = () => {
     })
     // change status approved
     const handleApproved = (classe) => {
-        // console.log(id)
         fetch(`https://sports-academies-server.vercel.app/status/approved/${classe?._id}`, { method: 'PATCH' })
             .then(res => res.json())
-            .then(data => {
+            .then(() => {
                 refetch()
-                console.log(data)
             })
     }
 
     // change status deny
     const handleDeny = (classe) => {
-        // console.log(id)
         fetch(`https://sports-academies-server.vercel.app/status/deny/${classe?._id}`, { method: 'PATCH' })
             .then(res => res.json())
-            .then(data => {
+            .then(() => {
                 refetch()
-                console.log(data)
+
             })
     }
 
@@ -56,7 +44,7 @@ const ManageClass = () => {
         }).then((result) => {
             if (result.value) {
                 Swal.fire(result.value);
-                console.log(result.value)
+
                 const showcauseOfDeny = { feedback: result.value, className: classe.className, status: classe.status }
 
                 fetch('https://sports-academies-server.vercel.app/feedback', {
@@ -67,8 +55,8 @@ const ManageClass = () => {
                     body: JSON.stringify(showcauseOfDeny)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
+                    .then(() => {
+
                     })
             }
         });

@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa'
 import { useContext } from 'react';
 import { AuthProvider } from '../AuthContext/AuthContext';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const { signInWithGoogle, signUp } = useContext(AuthProvider)
@@ -13,24 +14,21 @@ const Login = () => {
     const from = location.state?.from?.pathname || '/'
 
     const onSubmit = data => {
-        console.log(data)
+
         const { email, password } = data;
 
         signUp(email, password)
-            .then(result => {
-                const logged = result.user;
-                console.log(logged)
+            .then(() => {
                 navigate(from)
+                Swal.fire('Login successfull')
             })
 
 
     };
-    console.log(errors);
     const handleGoogleLogin = () => {
         signInWithGoogle()
             .then(result => {
                 const user = result.user;
-                console.log(user)
                 const userData = { name: user.displayName, email: user.email, photo: user.photoURL }
                 fetch('https://sports-academies-server.vercel.app/user', {
                     method: 'POST',
@@ -40,9 +38,10 @@ const Login = () => {
                     body: JSON.stringify(userData)
                 })
                     .then(res => res.json())
-                    .then(data => {
-                        console.log(data)
+                    .then(() => {
+
                         navigate(from)
+                        Swal.fire('Login successfull')
                     })
 
             })

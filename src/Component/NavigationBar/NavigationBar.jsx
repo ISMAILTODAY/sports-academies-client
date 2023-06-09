@@ -5,13 +5,14 @@ import Darkreader from 'react-darkreader';
 
 
 
+
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthProvider)
-    console.log(user ? user : '')
 
     const handleLogout = () => {
         logOut()
     }
+
     const navOption = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructor'>Instructor</Link></li>
@@ -36,7 +37,7 @@ const NavigationBar = () => {
                             {navOption}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl">Sports Academies</a>
+                    <a className="btn btn-ghost normal-case text-2xl font-semibold">SPORTS ACADEMIES</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

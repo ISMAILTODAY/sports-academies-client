@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import ClassRow from "./ClassRow";
 import { AuthProvider } from "../../AuthContext/AuthContext";
+import Swal from "sweetalert2";
+
 
 const SelectedClass = () => {
     const { user } = useContext(AuthProvider);
@@ -18,7 +20,6 @@ const SelectedClass = () => {
             .then(res => res.json())
             .then(data => {
                 setSelectClass(data)
-                console.log(data)
             })
     }, [token, user?.email]);
     const handleDelete = (id) => {
@@ -27,18 +28,42 @@ const SelectedClass = () => {
         })
             .then(res => res.json())
             .then(data => {
-                const remaining = selectClass.filter(selected => selected._id != id);
+                if (data.acknowledged) {
 
-                setSelectClass(remaining)
-                console.log(data)
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            const remaining = selectClass?.filter(selected => selected._id != id);
+                            setSelectClass(remaining)
+                            Swal.fire(
+                                'Deleted!',
+                                'Your class has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+                }
             })
     }
-    const price = selectClass?.reduce((sum, clas) => clas.price + sum, 0)
-    // 
+    const price = selectClass && selectClass?.reduce((sum, clas) => clas.price + sum, 0)
+
     return (
         <div className="w-full overflow-x-auto">
-            <h1>total: {selectClass.length}</h1>
-            <h1>pay: {price}</h1>
+            <div className="flex justify-between">
+                <div className="text-2xl font-semibold">
+                    <h1>total: {selectClass.length}</h1>
+                    <h1>Total pay: ${price}</h1>
+                </div>
+                <button className="btn btn-secondary btn-md mr-12">Pay Now</button>
+            </div>
             <table className="table">
                 {/* head */}
                 <thead>
