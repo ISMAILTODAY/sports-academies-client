@@ -34,6 +34,8 @@ const Home = () => {
                     </div>
                 </Carousel>
             </section>
+
+
             <section >
                 <h1 className="text-center font-bold text-3xl my-5">Popular Classes</h1>
 
@@ -63,36 +65,6 @@ const Home = () => {
                         ></InstructorCard>)
                     }
                 </div>
-
-                {/* 
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                </div> */}
             </section>
         </div>
 
