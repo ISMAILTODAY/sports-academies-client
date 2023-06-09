@@ -9,16 +9,6 @@ const AddClass = () => {
 
     const { user } = useContext(AuthProvider);
 
-
-    // const { register, handleSubmit, formState: { errors } } = useForm();
-
-    // const onSubmit = data => {
-
-    //     console.log(data)
-    //     // const { email, password, name, photo } = data;
-
-    // };
-
     const submit = (e) => {
         e.preventDefault()
         console.log(e.target)
