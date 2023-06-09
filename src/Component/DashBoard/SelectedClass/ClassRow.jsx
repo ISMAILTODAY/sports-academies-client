@@ -1,8 +1,7 @@
-// import React from 'react';
+
 
 const ClassRow = ({ selectedClass, handleDelete }) => {
-    // const admin = true;
-    console.log(selectedClass)
+
     const { className, instructorName, price, _id } = selectedClass;
 
     return (
