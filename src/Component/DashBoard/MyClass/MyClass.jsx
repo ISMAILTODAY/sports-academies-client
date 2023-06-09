@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import { useContext, useEffect, useState } from "react";
 import { AuthProvider } from "../../AuthContext/AuthContext";
 import MyClassRow from "./MyClassRow";
