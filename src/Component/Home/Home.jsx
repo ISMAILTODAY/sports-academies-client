@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SportsCard from "./SpotsCard/SportsCard";
-
 import InstructorCard from "./InstructorCard/InstructorCard";
 
 const Home = () => {
@@ -35,7 +34,7 @@ const Home = () => {
                 </Carousel>
             </section>
 
-
+            {/* popular classes */}
             <section >
                 <h1 className="text-center font-bold text-3xl my-5">Popular Classes</h1>
 
