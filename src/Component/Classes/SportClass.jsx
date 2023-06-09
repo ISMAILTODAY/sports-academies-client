@@ -6,16 +6,16 @@ const SportClass = () => {
 
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        fetch('fakedata.json')
+        fetch('https://sports-academies-server.vercel.app/allclass')
             .then(res => res.json())
             .then(data => setSports(data))
     }, [])
     return (
         <div className="grid md:grid-cols-3 gap-5 mt-32">
             {
-                sports.map(sport => <ClassesCard
-                    key={sport.enrolledStudents}
-                    sport={sport}
+                sports.map(sportClass => <ClassesCard
+                    key={sportClass.enrolledStudents}
+                    sport={sportClass}
                 ></ClassesCard>)
             }
         </div>

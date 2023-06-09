@@ -1,12 +1,32 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthProvider } from "../AuthContext/AuthContext";
+// import { useDarkreader } from "react-darkreader";
+import Darkreader from 'react-darkreader';
+
 
 
 const NavigationBar = () => {
+    const { user, logOut } = useContext(AuthProvider)
+    console.log(user ? user : '')
+    // const [isDark, { toggle, collectCSS }] = useDarkreader(defaultDarken, theme ?, fixes ?)
+
+    const handleLogout = () => {
+        logOut()
+    }
     const navOption = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/instructor'>Instructor</Link></li>
         <li><Link to='/classes'>Classes</Link></li>
-        <li><Link to='/dashboard'>Dashboard</Link></li>
+        {
+            user && <li><Link to='/dashboard'>Dashboard</Link></li>
+        }
+        {
+            user ? <> <li onClick={handleLogout}><a>Logout</a></li></> : <> <li><Link to='/login'>Login</Link></li></>
+        }
+        {/* <Switch checked={isDark} onChange={toggle} /> */}
+
+
     </>
 
     return (
@@ -29,8 +49,15 @@ const NavigationBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    {
+                        user && <img className="rounded-full w-10 h-10 mr-5" title={user?.displayName} src={user?.photoURL} alt="" />
+
+                    }
+                    <Darkreader></Darkreader>
+
+
                 </div>
+
             </div>
         </div>
     );

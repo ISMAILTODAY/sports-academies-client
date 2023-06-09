@@ -8,7 +8,7 @@ import InstructorCard from "./InstructorCard/InstructorCard";
 const Home = () => {
     const [sports, setSports] = useState([]);
     useEffect(() => {
-        fetch('fakedata.json')
+        fetch('https://sports-academies-server.vercel.app/allclass')
             .then(res => res.json())
             .then(data => setSports(data))
     }, [])
@@ -40,7 +40,7 @@ const Home = () => {
 
                 <div className="grid md:grid-cols-3 gap-5">
                     {
-                        sports.map(sport => <SportsCard
+                        sports?.slice(0, 6).map(sport => <SportsCard
                             key={sport.enrolledStudents}
                             sport={sport}
                         ></SportsCard>)
@@ -121,7 +121,7 @@ const Home = () => {
 
                 <div className="grid md:grid-cols-3 gap-5">
                     {
-                        sports.map(sport => <InstructorCard
+                        sports.slice(0, 6).map(sport => <InstructorCard
                             key={sport.enrolledStudents}
                             sport={sport}
                         ></InstructorCard>)
