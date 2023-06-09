@@ -16,11 +16,6 @@ const AddClass = () => {
         const availableSet = form.availableSet.value;
         const price = form.price.value;
         const classPhoto = form.classPhoto.files[0];
-        // console.log(classPhoto)
-
-        // console.log({ className, instructorName, instructorEmail, availableSet, price: parseInt(price), classPhoto })
-
-
 
         const formData = new FormData();
         formData.append('image', classPhoto)
@@ -32,8 +27,6 @@ const AddClass = () => {
             .then(image => {
                 const classData = { className, instructorName, instructorEmail, availableSet: parseInt(availableSet), price: parseInt(price), classPhoto: image.data.display_url, status: 'pending' }
 
-                // console.log(image.data.display_url)
-                // console.log(classData)
                 fetch('https://sports-academies-server.vercel.app/allclass', {
                     method: 'POST',
                     headers: {
