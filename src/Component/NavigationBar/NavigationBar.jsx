@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthProvider } from "../AuthContext/AuthContext";
-// import { useDarkreader } from "react-darkreader";
 import Darkreader from 'react-darkreader';
 
 
@@ -9,7 +8,6 @@ import Darkreader from 'react-darkreader';
 const NavigationBar = () => {
     const { user, logOut } = useContext(AuthProvider)
     console.log(user ? user : '')
-    // const [isDark, { toggle, collectCSS }] = useDarkreader(defaultDarken, theme ?, fixes ?)
 
     const handleLogout = () => {
         logOut()
@@ -24,9 +22,6 @@ const NavigationBar = () => {
         {
             user ? <> <li onClick={handleLogout}><a>Logout</a></li></> : <> <li><Link to='/login'>Login</Link></li></>
         }
-        {/* <Switch checked={isDark} onChange={toggle} /> */}
-
-
     </>
 
     return (
