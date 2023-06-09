@@ -47,24 +47,7 @@ const Home = () => {
                     }
                 </div>
 
-                {/* <div className="grid grid-cols-3 gap-y-8">
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>football</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>football</h1>
-                            <p>students: 100</p>
-                        </div>
+                {/* 
                     </div>
                     <div className="border w-[80%]  text-center shadow-lg">
                         <div>
