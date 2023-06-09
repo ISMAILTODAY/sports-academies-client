@@ -64,37 +64,7 @@ const Home = () => {
                     }
                 </div>
 
-                {/* . X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
-                    <div className="border w-[80%]  text-center shadow-lg">
-                        <div>
-                            <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
-                        </div>
-                        <div className="flex justify-evenly">
-                            <h1>Name: Mr. X</h1>
-                            <p>students: 100</p>
-                        </div>
-                    </div>
+                {/* 
                     <div className="border w-[80%]  text-center shadow-lg">
                         <div>
                             <img className="w-[70%] mx-auto" src="https://i.ibb.co/cckmnN5/tack.jpg" alt="" />
