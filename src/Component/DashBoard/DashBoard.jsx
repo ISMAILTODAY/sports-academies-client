@@ -22,10 +22,11 @@ const DashBoard = () => {
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
+
+                    <Outlet></Outlet>
                     <div>
                         <img className="h-screen" src="https://i.ibb.co/KjRfvC0/360-F-328521248-d-VW7-NDn-Y8-As-Ov-SVa-Hu6rad95-Hz-Lnly5-F.jpg" alt="" />
                     </div>
-                    <Outlet></Outlet>
 
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
@@ -34,7 +35,7 @@ const DashBoard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-base-200 text-base-content">
 
-                        <h1 className="text-3xl font-semibold mb-5 ">SPORT ACADEMIES</h1>
+                        <h1 className="text-3xl font-semibold mb-5 ">SPORTS ACADEMIES</h1>
                         {
                             userRole?.role === 'admin' ? <>
                                 <li><Link to='/dashboard'><FaUserShield></FaUserShield> Admin Home</Link></li>

@@ -10,6 +10,7 @@ const SportClass = () => {
             .then(res => res.json())
             .then(data => setSports(data))
     }, [])
+    console.log(sports)
     return (
         <div className="grid md:grid-cols-3 gap-5 mt-32">
             {
